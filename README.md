@@ -9,6 +9,11 @@ The only thing you will need to do - is ask Licensario at feature entry point if
 use this feature. If the answer is *yes* - you just proceed with the standard flow, if the answer is *not* - you 
 proceed with the JS API flow.
 
+Authentication
+--------------
+In order to request Licensario for information, you will need to authenticate your request using your credentials.
+You can find these in the "API Credentials" page in the publishers site (https://publishers.licensario.com).
+
 How Licensario Identifies your users
 ------------------------------------
 So how Licensario identifies users?
