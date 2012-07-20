@@ -54,7 +54,7 @@ or
 Create a license for user
 -------------------------
 
-    POST /api/v1//users/*user-id*/licenses
+    POST /api/v1/users/*user-id*/licenses
     
     paymentPlanId=PREMIUM_PLAN
     
@@ -67,7 +67,7 @@ or
 Ensure that a license exists for user
 -------------------------------------
 
-    PUT /api/v1//users/*user-id*/licenses
+    PUT /api/v1/users/*user-id*/licenses
     
     paymentPlanId=PREMIUM_PLAN
 or
@@ -76,3 +76,11 @@ or
     
     paymentPlanId=PREMIUM_PLAN
 
+Get feature allocation for user
+-------------------------------
+
+    GET /api/v1/users/*user-id*/features/*feature-id*/alloc
+    
+or
+    GET /api/v1/users/external/*your-user-id*/features/*feature-id*/alloc
+    
