@@ -70,6 +70,7 @@ Ensure that a license exists for user
     PUT /api/v1/users/*user-id*/licenses
     
     paymentPlanId=PREMIUM_PLAN
+    
 or
 
     PUT /api/v1/users/external/*your-user-id*/licenses
@@ -85,3 +86,28 @@ or
 
     GET /api/v1/users/external/*your-user-id*/features/*feature-id*/alloc
     
+Set feature allocation for user
+----------------------------------
+
+    PUT /api/v1/users/*user-id*/features/*feature-id/alloc
+    
+    amount=10.0
+
+or
+
+    PUT /api/v1/users/external/*external_user-id*/features/*feature-id/alloc
+    
+    amount=10.0
+
+Increment feature allocation for user
+-------------------------------------
+
+    POST /api/v1/users/*user-id*/features/*feature-id/alloc
+    
+    amount=10.0
+
+or
+
+    POST /api/v1/users/external/*external_user-id*/features/*feature-id/alloc
+    
+    amount=10.0
