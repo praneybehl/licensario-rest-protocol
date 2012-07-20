@@ -21,8 +21,8 @@ How Licensario Identifies your users
 So how Licensario identifies users?
 
 Licensario can work in 2 modes:
-  1. Manage the users by itself
-  2. Authenticate users through OAuth2 protocol
+  1. Manage the users by itself (Licensario users)
+  2. Authenticate users through OAuth2 protocol (External users)
 
 In the 1st flow users are identified using Licensario User Id. Most queries for Licensario users will start with
 /api/v1/users/*user-id*
@@ -34,3 +34,11 @@ In the 2nd flow users will be identified using your unique user id, and the quer
 
     GET /api/v1/users/external/*your-user-id*
     
+The API
+=======
+Ensure that an external user exists in Licensario database:
+
+    PUT /api/v1/users/external/*your-user-id*
+    
+    email=user@example.com
+
