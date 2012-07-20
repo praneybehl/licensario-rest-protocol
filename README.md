@@ -14,6 +14,8 @@ Authentication
 In order to request Licensario for information, you will need to authenticate your request using your credentials.
 You can find these in the "API Credentials" page in the publishers site (https://publishers.licensario.com).
 
+Authenticating your requests requires adding the **ISV_API_KEY** and **ISV_API_SECRET** headers to each request
+
 How Licensario Identifies your users
 ------------------------------------
 So how Licensario identifies users?
