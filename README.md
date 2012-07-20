@@ -82,5 +82,6 @@ Get feature allocation for user
     GET /api/v1/users/*user-id*/features/*feature-id*/alloc
     
 or
+
     GET /api/v1/users/external/*your-user-id*/features/*feature-id*/alloc
     
