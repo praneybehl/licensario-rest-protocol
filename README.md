@@ -44,26 +44,34 @@ Ensure that an **external user** exists in Licensario database:
 
 Query user licenses
 -------------------
+
     GET /api/v1/users/*user-id*/licenses  
+    
 or
+
     GET /api/v1/users/external/*your-user-id*/licenses
     
 Create a license for user
 -------------------------
+
     POST /api/v1//users/*user-id*/licenses
     
     paymentPlanId=PREMIUM_PLAN
+    
 or
+
     POST /api/v1/users/external/*your-user-id*/licenses
     
     paymentPlanId=PREMIUM_PLAN
     
 Ensure that a license exists for user
 -------------------------------------
+
     PUT /api/v1//users/*user-id*/licenses
     
     paymentPlanId=PREMIUM_PLAN
 or
+
     PUT /api/v1/users/external/*your-user-id*/licenses
     
     paymentPlanId=PREMIUM_PLAN
