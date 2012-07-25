@@ -33,7 +33,7 @@ only provide an **external_user_id**, which identifies them in our system.
     * **Description**: Retrieve the **Licenses** for a given **User**.
     * **Parameters**: none
 
-    GET BASE_URL/licenses
+    > GET BASE_URL/licenses
 
 
 2. **Create a License**
