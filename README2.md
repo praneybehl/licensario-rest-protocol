@@ -30,18 +30,19 @@ only provide an **external_user_id**, which identifies them in our system.
 ## Actions
 
 1. **Get a list of Licenses**
-    * **Action**: Retrieve the **Licenses** for a given **User**.
-    * **Method**: GET
-    * **URL**: *BASE_URL*/licenses
-    * **Example**:
+    * **Description**: Retrieve the **Licenses** for a given **User**.
+    * **Parameters**: none
 
-            Example Request:
-              asdasd
-            
-            Example Response:
-              asdasd
+        GET BASE_URL/licenses
+
 
 2. **Create a License**
+    * **Description**: Create a **License** for a given **User**.
+    * **Parameters**: *paymentPlanId*
+
+        POST BASE_URL/licenses
+
+
 3. **Ensure that a License exists**
 4. **Read Feature's Allocation**
 5. **Update a Feature's Allocation**
