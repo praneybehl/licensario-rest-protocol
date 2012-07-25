@@ -33,13 +33,14 @@ only provide an **external_user_id**, which identifies them in our system.
     * **Action**: Retrieve the **Licenses** for a given **User**.
     * **Method**: GET
     * **URL**: *BASE_URL*/licenses
-    * **Example Request**:
+    * **Example**:
 
-            dasdasdasdas
+            Example Request:
+              asdasd
+            
+            Example Response:
+              asdasd
 
-    * **Example Response**:
-
-            dasdasd
 
 2. Create a License
 3. Ensure that a License exists
