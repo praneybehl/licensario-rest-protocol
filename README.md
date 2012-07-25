@@ -69,6 +69,8 @@ For these cases use the following request. The license is issued according to te
 POST parameters:
   - **paymentPlanId** - the id of the payment plan to use for the license
 
+The request:
+
     POST /api/v1/users/*user-id*/licenses
     
     paymentPlanId=PREMIUM_PLAN
@@ -98,8 +100,6 @@ Often you'll want to offer a free tier for your customers and thus will want to 
 
 Use this request to achieve this. The parameters and the output are the same as in the previous request.
 
-Some
-
     PUT /api/v1/users/*user-id*/licenses
     
     paymentPlanId=PREMIUM_PLAN
@@ -117,6 +117,8 @@ call this method to ensure that the user has the entitlement to use it.
 
 REST Parameters:
   - **feature-id** - the feature whose allocation is in question
+
+The request:
 
     GET /api/v1/users/*user-id*/features/*feature-id*/alloc
     
