@@ -19,10 +19,13 @@ We offer two ways of identifying your users:
 
 1. **Storing their information at Licensario** (*licensario users*): your Users receive an internal **user_id** and their 
 information are stored in our servers. You can retrieve it or change it any time through our API.
-        BASE_URL = /api/v1/users/:user_id
+
+    BASE_URL = /api/v1/users/:user_id
+
 2. **Authenticating external users via the OAuth2 Protocol** (*external users*): you can store your User information yourself and 
 only provide an **external_user_id**, which identifies them in our system.
-        BASE_URL = /api/v1/users/external/:external_user_id
+
+    BASE_URL = /api/v1/users/external/:external_user_id
 
 ## Actions
 
