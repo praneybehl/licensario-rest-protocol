@@ -32,8 +32,7 @@ only provide an **external_user_id**, which identifies them in our system.
 ### Get a list of Licenses
 Retrieve the **Licenses** for a given **User**.
 
-    <b>GET</b> <i>BASE_URL</i>/licenses
-
+**GET** *BASE_URL*/licenses
 
 ### Create a License
 ### Ensure that a License exists
