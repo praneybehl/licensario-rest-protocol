@@ -33,14 +33,14 @@ only provide an **external_user_id**, which identifies them in our system.
     * **Description**: Retrieve the **Licenses** for a given **User**.
     * **Parameters**: none
 
-            GET BASE_URL/licenses
+    GET BASE_URL/licenses
 
 
 2. **Create a License**
     * **Description**: Create a **License** for a given **User**.
     * **Parameters**: *paymentPlanId*
 
-        POST BASE_URL/licenses
+    POST BASE_URL/licenses
 
 
 3. **Ensure that a License exists**
