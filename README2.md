@@ -29,16 +29,20 @@ only provide an **external_user_id**, which identifies them in our system.
 
 ## Actions
 
-### Get a list of Licenses
-Retrieve the **Licenses** for a given **User**.
+1. Get a list of Licenses
+    * **action**: Retrieve the **Licenses** for a given **User**.
+    * **method**: GET
+    * **URL**: *BASE_URL*/licenses
 
-**GET** *BASE_URL*/licenses
+        dasdasd
 
-### Create a License
-### Ensure that a License exists
-### Read Feature's Allocation
-### Update a Feature's Allocation
-### Increment a Feature's Allocation
+        dasdasdasdas
+
+2. Create a License
+3. Ensure that a License exists
+4. Read Feature's Allocation
+5. Update a Feature's Allocation
+6. Increment a Feature's Allocation
 
 
 
