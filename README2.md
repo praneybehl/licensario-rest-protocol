@@ -20,25 +20,25 @@ We offer two ways of identifying your users:
 1. **Storing their information at Licensario** (*licensario users*): your Users receive an internal **user_id** and their 
 information are stored in our servers. You can retrieve it or change it any time through our API.
 
-        BASE_URL = /api/v1/users/:user_id
+        $BASE_URL = /api/v1/users/:user_id
 
 2. **Authenticating external users via the OAuth2 Protocol** (*external users*): you can store your User information yourself and 
 only provide an **external_user_id**, which identifies them in our system.
 
-        BASE_URL = /api/v1/users/external/:external_user_id
+        $BASE_URL = /api/v1/users/external/:external_user_id
 
 ## Actions
 
 ### Get a list of Licenses
 
-    GET BASE_URL/licenses
+    GET $BASE_URL/licenses
 
 * **Parameters**: none
 * **Description**: Retrieve the licenses for a given user.
 
 ### Create a License
 
-    POST BASE_URL/licenses
+    POST $BASE_URL/licenses
 
 * **Description**: Create a license for a given user.
 * **Parameters**:
@@ -46,7 +46,7 @@ only provide an **external_user_id**, which identifies them in our system.
 
 ### Ensure that a License exists
 
-    PUT BASE_URL/licenses
+    PUT $BASE_URL/licenses
 
 * **Description**: Ensure that a given user has the necessary license.
 * **Parameters**:
@@ -54,7 +54,7 @@ only provide an **external_user_id**, which identifies them in our system.
 
 ### Read Feature's Allocation
 
-    GET BASE_URL/licenses/features/:feature_id/alloc
+    GET $BASE_URL/licenses/features/:feature_id/alloc
 
 * **Description**: Retrieves the amount available (i.e. allocation) of a given feature to a given user.
 * **Parameters**:
@@ -62,7 +62,7 @@ only provide an **external_user_id**, which identifies them in our system.
 
 ### Update a Feature's Allocation
 
-    PUT BASE_URL/licenses/features/:feature_id/alloc
+    PUT $BASE_URL/licenses/features/:feature_id/alloc
 
 * **Description**: Updates the amount available (i.e. allocation) of a given feature to a given user.
 * **Parameters**:
@@ -71,7 +71,7 @@ only provide an **external_user_id**, which identifies them in our system.
 
 ### Increment a Feature's Allocation
 
-    POST BASE_URL/licenses/features/:feature_id/alloc
+    POST $BASE_URL/licenses/features/:feature_id/alloc
 
 * **Description**: Increments the amount available (i.e. allocation) of a given feature to a given user by a defined amount.
 * **Parameters**:
