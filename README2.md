@@ -33,8 +33,10 @@ only provide an **external_user_id**, which identifies them in our system.
 
     GET $BASE_URL/licenses
 
-* **Parameters**: none
 * **Description**: Retrieve the licenses for a given user.
+* **Parameters**:
+    * *featureIds*: retrieve licenses for these Features
+    * *paymentPlanIds*: retrieve licenses for these Payment Plans
 
 ### Create a License
 
