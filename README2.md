@@ -80,4 +80,11 @@ only provide an **external_user_id**, which identifies them in our system.
     * *feature_id*: ID of the feature
     * *amount*: The increment / decrement to the available amount of the feature. Ex: *30*, *-0.5*, *15.75*, etc.
 
+### Ensure the existenc of an External User
+
+    PUT $BASE_URL
+
+* **Description**: Ensure that an External User exists. If it doesn't it will be created.
+* **Parameters**:
+    * *email*: email of the External User.
 
