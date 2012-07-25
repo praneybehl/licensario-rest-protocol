@@ -33,30 +33,49 @@ only provide an **external_user_id**, which identifies them in our system.
 
     GET BASE_URL/licenses
 
-* **Description**: Retrieve the **Licenses** for a given **User**.
 * **Parameters**: none
+* **Description**: Retrieve the licenses for a given user.
 
 ### Create a License
 
     POST BASE_URL/licenses
 
-* **Description**: Create a **License** for a given **User**.
+* **Description**: Create a license for a given user.
 * **Parameters**:
     * *paymentPlanId*: ID of the payment plan selected by the user
 
-<dl>
-  <dt> paymentPlanId </dt>
-  <dd> ID of the payment plan selected by the user </dd>
-  
-</dl>
+### Ensure that a License exists
 
+    PUT BASE_URL/licenses
 
+* **Description**: Ensure that a given user has the necessary license.
+* **Parameters**:
+    * *paymentPlanId*: ID of the payment plan selected by the user
 
+### Read Feature's Allocation
 
-3. **Ensure that a License exists**
-4. **Read Feature's Allocation**
-5. **Update a Feature's Allocation**
-6. **Increment a Feature's Allocation**
+    GET BASE_URL/licenses/features/:feature_id/alloc
 
+* **Description**: Retrieves the amount available (i.e. allocation) of a given feature to a given user.
+* **Parameters**:
+    * *feature_id*: ID of the feature
+
+### Update a Feature's Allocation
+
+    PUT BASE_URL/licenses/features/:feature_id/alloc
+
+* **Description**: Updates the amount available (i.e. allocation) of a given feature to a given user.
+* **Parameters**:
+    * *feature_id*: ID of the feature
+    * *amount*: The new available amount of the feature. Ex: *25*, *0.2*, *12.38*, etc.
+
+### Increment a Feature's Allocation
+
+    POST BASE_URL/licenses/features/:feature_id/alloc
+
+* **Description**: Increments the amount available (i.e. allocation) of a given feature to a given user by a defined amount.
+* **Parameters**:
+    * *feature_id*: ID of the feature
+    * *amount*: The increment / decrement to the available amount of the feature. Ex: *30*, *-0.5*, *15.75*, etc.
 
 
