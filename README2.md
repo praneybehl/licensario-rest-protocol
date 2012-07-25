@@ -30,13 +30,16 @@ only provide an **external_user_id**, which identifies them in our system.
 ## Actions
 
 1. Get a list of Licenses
-    * **action**: Retrieve the **Licenses** for a given **User**.
-    * **method**: GET
+    * **Action**: Retrieve the **Licenses** for a given **User**.
+    * **Method**: GET
     * **URL**: *BASE_URL*/licenses
+    * **Example Request**:
 
-        dasdasd
+            dasdasdasdas
 
-        dasdasdasdas
+    * **Example Response**:
+
+            dasdasd
 
 2. Create a License
 3. Ensure that a License exists
