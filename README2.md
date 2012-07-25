@@ -29,12 +29,12 @@ only provide an **external_user_id**, which identifies them in our system.
 
 ## Actions
 
-1. **Get a list of Licenses**
+###Get a list of Licenses
 
     GET BASE_URL/licenses
 
-    * **Description**: Retrieve the **Licenses** for a given **User**.
-    * **Parameters**: none
+* **Description**: Retrieve the **Licenses** for a given **User**.
+* **Parameters**: none
 
 2. **Create a License**
     * **Description**: Create a **License** for a given **User**.
