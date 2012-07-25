@@ -29,18 +29,28 @@ only provide an **external_user_id**, which identifies them in our system.
 
 ## Actions
 
-###Get a list of Licenses
+### Get a list of Licenses
 
     GET BASE_URL/licenses
 
 * **Description**: Retrieve the **Licenses** for a given **User**.
 * **Parameters**: none
 
-2. **Create a License**
-    * **Description**: Create a **License** for a given **User**.
-    * **Parameters**: *paymentPlanId*
+### Create a License
 
     POST BASE_URL/licenses
+
+* **Description**: Create a **License** for a given **User**.
+* **Parameters**:
+    * *paymentPlanId*: ID of the payment plan selected by the user
+
+<dl>
+  <dt> paymentPlanId </dt>
+  <dd> ID of the payment plan selected by the user </dd>
+  
+</dl>
+
+
 
 
 3. **Ensure that a License exists**
