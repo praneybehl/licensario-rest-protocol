@@ -3,6 +3,16 @@ Licensario JS API
 Licensario JS API is responsible for displaying the licensing wizard to the user. The wizard is displayed in an iframe
 and can be displayed inside your site.
 
+Installation
+------------
+
+```html
+	<script type="text/javascript" src="https://users.licensario.com/assets/api/api.js"></script>
+```
+
+Usage
+-----
+
 ```javascript
 	licensario.init({
 		baseUrl: "http://users.licensario.net",
