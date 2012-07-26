@@ -1,113 +1,90 @@
-Licensario REST API
-===================
+# Licensario REST API
 
-How Licensario works
---------------------
-Licensario handles the provisioning of your users entitlements. So instead of integrating with a payment gateway
-and then managing users entitlements on your own, you can leave it to Licensario.
-The only thing you will need to do - is ask Licensario at feature entry point if the user has an active entitlement to
-use this feature. If the answer is *yes* - you just proceed with the standard flow, if the answer is *not* - you 
-proceed with the JS API flow.
+## What is Licensario
+Licensario is an online service that handles the provisioning and management of your users entitlements, thus saving 
+you the trouble of manually managing them and having to integrate directly with a payment gateway. It's quite simple: 
+whenever an user requests access to a feature of your product you can use our REST API to check if he's authorized to 
+use it. If he is not authorized you can control how to proceed by, say, offering a plan upgrade that instantly grants 
+access to that feature **without disrupting the user experience**. 
 
-Authentication
---------------
-In order to request Licensario for information, you will need to authenticate your request using your credentials.
-You can find these in the "API Credentials" page in the publishers site (https://publishers.licensario.com).
+Licensario's API has a RESTful architecture and can be used by any programming language, framework or tool that has a HTTP 
+library, such as jQuery, Ruby, Java, C#, .NET, etc.
 
-Authenticating your requests requires adding the **ISV_API_KEY** and **ISV_API_SECRET** headers to each request
+## Authentication
+All requests to our API need to by authenticated by adding the the **ISV_API_KEY** and **ISV_API_SECRET** headers 
+to each request. You can retrieve your API credentials in your [publisher's page](https://publishers.licensario.com).
 
-How Licensario Identifies your users
-------------------------------------
-So how Licensario identifies users?
+## Your Users
+We offer two ways of identifying your users:
 
-Licensario can work in 2 modes:
-  1. Manage the users by itself (Licensario users)
-  2. Authenticate users through OAuth2 protocol (External users)
+1. **Storing their information at Licensario** (*licensario users*): your Users receive an internal **user_id** and their 
+information are stored in our servers. You can retrieve it or change it any time through our API.
 
-In the 1st flow users are identified using Licensario User Id. Most queries for Licensario users will start with
-/api/v1/users/*user-id*
+        $BASE_URL = /api/v1/users/:user_id
 
-    GET /api/v1/users/*user-id*
+2. **Authenticating external users via the OAuth2 Protocol** (*external users*): you can store your User information yourself and 
+only provide an **external_user_id**, which identifies them in our system.
 
-In the 2nd flow users will be identified using your unique user id, and the queries will start with
-/api/v1/users/external/*your-user-id*
+        $BASE_URL = /api/v1/users/external/:external_user_id
 
-    GET /api/v1/users/external/*your-user-id*
-    
-The API
-=======
-Ensure that an **external user** exists in Licensario database:
+## Actions
 
-    PUT /api/v1/users/external/*your-user-id*
-    
-    email=user@example.com
+### Get a list of Licenses
 
-Query user licenses
--------------------
+    GET $BASE_URL/licenses
 
-    GET /api/v1/users/*user-id*/licenses  
-    
-or
+* **Description**: Retrieve the licenses for a given user.
+* **Parameters**:
+    * *featureIds*: retrieve licenses for these Features
+    * *paymentPlanIds*: retrieve licenses for these Payment Plans
 
-    GET /api/v1/users/external/*your-user-id*/licenses
-    
-Create a license for user
--------------------------
+### Create a License
 
-    POST /api/v1/users/*user-id*/licenses
-    
-    paymentPlanId=PREMIUM_PLAN
-    
-or
+    POST $BASE_URL/licenses
 
-    POST /api/v1/users/external/*your-user-id*/licenses
-    
-    paymentPlanId=PREMIUM_PLAN
-    
-Ensure that a license exists for user
--------------------------------------
+* **Description**: Create a license for a given user.
+* **Parameters**:
+    * *paymentPlanId*: ID of the payment plan selected by the user
 
-    PUT /api/v1/users/*user-id*/licenses
-    
-    paymentPlanId=PREMIUM_PLAN
-    
-or
+### Ensure that a License exists
 
-    PUT /api/v1/users/external/*your-user-id*/licenses
-    
-    paymentPlanId=PREMIUM_PLAN
+    PUT $BASE_URL/licenses
 
-Get feature allocation for user
--------------------------------
+* **Description**: Ensure that a given user has the necessary license.
+* **Parameters**:
+    * *paymentPlanId*: ID of the payment plan selected by the user
 
-    GET /api/v1/users/*user-id*/features/*feature-id*/alloc
-    
-or
+### Read Feature's Allocation
 
-    GET /api/v1/users/external/*your-user-id*/features/*feature-id*/alloc
-    
-Set feature allocation for user
-----------------------------------
+    GET $BASE_URL/licenses/features/:feature_id/alloc
 
-    PUT /api/v1/users/*user-id*/features/*feature-id/alloc
-    
-    amount=10.0
+* **Description**: Retrieves the amount available (i.e. allocation) of a given feature to a given user.
+* **Parameters**:
+    * *feature_id*: ID of the feature
 
-or
+### Update a Feature's Allocation
 
-    PUT /api/v1/users/external/*external_user-id*/features/*feature-id/alloc
-    
-    amount=10.0
+    PUT $BASE_URL/licenses/features/:feature_id/alloc
 
-Increment feature allocation for user
--------------------------------------
+* **Description**: Updates the amount available (i.e. allocation) of a given feature to a given user.
+* **Parameters**:
+    * *feature_id*: ID of the feature
+    * *amount*: The new available amount of the feature. Ex: *25*, *0.2*, *12.38*, etc.
 
-    POST /api/v1/users/*user-id*/features/*feature-id/alloc
-    
-    amount=10.0
+### Increment a Feature's Allocation
 
-or
+    POST $BASE_URL/licenses/features/:feature_id/alloc
 
-    POST /api/v1/users/external/*external_user-id*/features/*feature-id/alloc
-    
-    amount=10.0
+* **Description**: Increments the amount available (i.e. allocation) of a given feature to a given user by a defined amount.
+* **Parameters**:
+    * *feature_id*: ID of the feature
+    * *amount*: The increment / decrement to the available amount of the feature. Ex: *30*, *-0.5*, *15.75*, etc.
+
+### Ensure the existence of an External User
+
+    PUT $BASE_URL
+
+* **Description**: Ensure that an External User exists. If it doesn't it will be created.
+* **Parameters**:
+    * *email*: email of the External User.
+
