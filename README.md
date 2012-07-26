@@ -35,8 +35,8 @@ only provide an **external_user_id**, which identifies them in our system.
 
 * **Description**: Retrieve the licenses for a given user.
 * **Parameters**:
-    * *featureIds*: retrieve licenses for these Features
-    * *paymentPlanIds*: retrieve licenses for these Payment Plans
+    * *featureIds*: IDs of the Features.
+    * *paymentPlanIds*: IDs of the Payment Plans.
 
 ### Create a License
 
@@ -44,7 +44,7 @@ only provide an **external_user_id**, which identifies them in our system.
 
 * **Description**: Create a license for a given user.
 * **Parameters**:
-    * *paymentPlanId*: ID of the payment plan selected by the user
+    * *paymentPlanId*: ID of the Payment Plan.
 
 ### Ensure that a License exists
 
@@ -60,7 +60,7 @@ only provide an **external_user_id**, which identifies them in our system.
 
 * **Description**: Retrieves the amount available (i.e. allocation) of a given feature to a given user.
 * **Parameters**:
-    * *feature_id*: ID of the feature
+    * *feature_id*: ID of the Feature.
 
 ### Update a Feature's Allocation
 
@@ -69,7 +69,7 @@ only provide an **external_user_id**, which identifies them in our system.
 * **Description**: Updates the amount available (i.e. allocation) of a given feature to a given user.
 * **Parameters**:
     * *feature_id*: ID of the feature
-    * *amount*: The new available amount of the feature. Ex: *25*, *0.2*, *12.38*, etc.
+    * *amount*: The new available amount of the Feature. Ex: *25*, *0.2*, *12.38*, etc.
 
 ### Increment a Feature's Allocation
 
@@ -77,8 +77,8 @@ only provide an **external_user_id**, which identifies them in our system.
 
 * **Description**: Increments the amount available (i.e. allocation) of a given feature to a given user by a defined amount.
 * **Parameters**:
-    * *feature_id*: ID of the feature
-    * *amount*: The increment / decrement to the available amount of the feature. Ex: *30*, *-0.5*, *15.75*, etc.
+    * *feature_id*: ID of the Feature.
+    * *amount*: The increment / decrement to the available amount of the Feature. Ex: *30*, *-0.5*, *15.75*, etc.
 
 ### Ensure the existence of an External User
 
