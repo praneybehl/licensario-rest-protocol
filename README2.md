@@ -8,7 +8,7 @@ use it. If he is not authorized you can control how to proceed by, say, offering
 access to that feature **without disrupting the user experience**. 
 
 Licensario's API has a RESTful architecture and can be used by any programming language, framework or tool that has a HTTP 
-library, such as jQuery, Ruby, Java, C#, .NET, etc.
+library, such as Ruby, Java, C#, .NET, etc.
 
 ## Authentication
 All requests to our API need to by authenticated by adding the the **ISV_API_KEY** and **ISV_API_SECRET** headers 
