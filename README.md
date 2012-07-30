@@ -7,8 +7,11 @@ your rock-solid battle-proven desktop software with our service, this is the pla
 You can start using Licensario in your application using two basic strategies: talk directly to our REST API or 
 use one of our pre-made components. Below are links for the relevant docs:
 
+#Core API documentation
 * [REST API](https://github.com/Licensario/licensario-rest-protocol/blob/master/rest-api.md)
 * [JavaScript](https://github.com/Licensario/licensario-rest-protocol/blob/master/js-api.md)
+
+SDKs for web frameworks
 * [Ruby](https://github.com/marcelow/licensario)
 * [Python](https://github.com/Licensario/licensario-python-sdk)
 
