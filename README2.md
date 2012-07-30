@@ -38,9 +38,11 @@ only provide an **external_user_id**, which identifies them in our system.
     * *featureIds*: IDs of the Features.
     * *paymentPlanIds*: IDs of the Payment Plans.
 * **Example**:
+
     ```
     GET /api/v1/users/external/1/licenses?featureIds=MANAGE_TOD5533de505b&paymentPlanIds=FREE_PLANca1b8f4ead
     ```
+
     ```xml
     <?xml version="1.0"?>
     <userLicenses>
