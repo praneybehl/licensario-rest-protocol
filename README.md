@@ -11,7 +11,7 @@ use one of our pre-made components. Below are links for the relevant docs:
 * [REST API](https://github.com/Licensario/licensario-rest-protocol/blob/master/rest-api.md)
 * [JavaScript](https://github.com/Licensario/licensario-rest-protocol/blob/master/js-api.md)
 
-SDKs for web frameworks
+#SDKs for web frameworks
 * [Ruby](https://github.com/marcelow/licensario)
 * [Python](https://github.com/Licensario/licensario-python-sdk)
 
