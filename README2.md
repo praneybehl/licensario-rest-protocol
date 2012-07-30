@@ -142,7 +142,7 @@ only provide an **external_user_id**, which identifies them in our system.
     ```
 
     ```http
-    RESPONSE CODE: 200
+    HTTP/1.1 200 OK
     ```
 
 ### Increment a Feature's Allocation
@@ -161,7 +161,7 @@ only provide an **external_user_id**, which identifies them in our system.
     ```
 
     ```http
-    RESPONSE CODE: 200
+    HTTP/1.1 200 OK
     ```
 
 ### Ensure the existence of an External User
@@ -179,6 +179,6 @@ only provide an **external_user_id**, which identifies them in our system.
     ```
 
     ```http
-    RESPONSE CODE: 200
+    HTTP/1.1 200 OK
     ```
 
