@@ -37,7 +37,17 @@ only provide an **external_user_id**, which identifies them in our system.
 * **Parameters**:
     * *featureIds*: IDs of the Features.
     * *paymentPlanIds*: IDs of the Payment Plans.
-
+* **Examples**:
+    * Request:
+        ```xml
+          <test>
+          </test>
+        ```
+    * Response:
+        ```xml
+          <test>
+          </test>
+        ```
 ### Create a License
 
     POST $BASE_URL/licenses
