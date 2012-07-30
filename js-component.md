@@ -14,7 +14,8 @@ Now that you've included the component in your page you have to initialize it. I
 parameters, such as:
 
 * **baseUrl**: the URL of the Licensario API service. Ex: "http://users.licensario.net".
-* **options**: a *Hash* of the configurations for the Licensario JS Component
+* **initCompleted**: the function called to configure the JS Component after it finishes loading. It contains the *options* Hash that 
+in turn, holds the configuration parameters.
     * **featureIds**: an *Array* that contains the IDs of the Features you want to control the licensing for in this particular page.
     * **allowedPaymentPlanIds**: an *Array* of the Payment Plans your user will be allowed to choose from.
     * **paymentPlanId**: if you want to use a specific Payment Plan you can set this *Integer* attibute to the ID of that Plan. This will skip 
@@ -30,7 +31,11 @@ parameters, such as:
 # Example
 
 ```javascript
-    licensario.init(
-      baseUrl:
-    )
+    licensario.init({
+      baseUrl: "http://users.licensario.net",
+      initCompleted: function(){
+        options = {
+        }
+      }
+    });
 ```
