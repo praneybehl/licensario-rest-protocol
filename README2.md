@@ -40,16 +40,30 @@ only provide an **external_user_id**, which identifies them in our system.
 * **Examples**:
     * Request:
 
-        ```xml
-          <test>
-          </test>
+        ```
+        GET /api/v1/users/external/1/licenses?featureIds=MANAGE_TOD5533de505b&paymentPlanIds=FREE_PLANca1b8f4ead
         ```
 
     * Response:
 
         ```xml
-          <test>
-          </test>
+        <?xml version="1.0"?>
+        <userLicenses>
+          <licenseCertificate licenseId="56" userId="121" paymentPlanId="FREE_PLANca1b8f4ead" issueDateUTC="20120719173522" is_trial="true">
+          <features>
+            <feature id="MANAGE_TOD5533de505b" totalAmount="100.0" amountUsed="2.0"/>
+          </features>
+        </licenseCertificate>
+          <licenseCertificate licenseId="16" userId="121" paymentPlanId="FREE_PLANca1b8f4ead" issueDateUTC="20120712232223" expirationDateUTC="20120812232223" is_trial="true">
+          <features>
+            <feature id="MANAGE_TOD5533de505b" totalAmount="100.0" amountUsed="23.0"/>
+          </features>
+        </licenseCertificate>
+          <licenseCertificate licenseId="55" userId="121" paymentPlanId="FREE_PLANca1b8f4ead" issueDateUTC="20120719172953" is_trial="true">
+          <features>
+            <feature id="MANAGE_TOD5533de505b" totalAmount="100.0" amountUsed="2.0"/>
+          </features>
+        </userLicenses>
         ```
 
 ### Create a License
