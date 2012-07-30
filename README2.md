@@ -138,7 +138,7 @@ only provide an **external_user_id**, which identifies them in our system.
 
     ```
     PUT /api/v1/users/external/1/features/MANAGE_TOD5533de505b/alloc
-    {"amount"=>"1", "paymentPlanId"=>"FREE_PLANca1b8f4ead"}
+    {"amount": "1", "paymentPlanId": "FREE_PLANca1b8f4ead"}
     ```
 
     ```http
