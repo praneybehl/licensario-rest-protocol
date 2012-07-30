@@ -70,6 +70,7 @@ only provide an **external_user_id**, which identifies them in our system.
 
     ```
     POST /api/v1/users/external/1/licenses
+    PARAMETERS: {"paymentPlanId": "FREE_PLANca1b8f4ead"}
     ```
 
     ```xml
@@ -92,6 +93,7 @@ only provide an **external_user_id**, which identifies them in our system.
 
     ```
     PUT /api/v1/users/external/1/licenses
+    PARAMETERS: {"paymentPlanId": "FREE_PLANca1b8f4ead"}
     ```
 
     ```xml
@@ -132,6 +134,16 @@ only provide an **external_user_id**, which identifies them in our system.
 * **Parameters**:
     * *feature_id*: ID of the feature
     * *amount*: The new available amount of the Feature. Ex: *25*, *0.2*, *12.38*, etc.
+* **Example**:
+
+    ```
+    PUT /api/v1/users/external/1/features/MANAGE_TOD5533de505b/alloc
+    {"amount"=>"1", "paymentPlanId"=>"FREE_PLANca1b8f4ead"}
+    ```
+
+    ```http
+    RESPONSE CODE: 200
+    ```
 
 ### Increment a Feature's Allocation
 
@@ -141,6 +153,16 @@ only provide an **external_user_id**, which identifies them in our system.
 * **Parameters**:
     * *feature_id*: ID of the Feature.
     * *amount*: The increment / decrement to the available amount of the Feature. Ex: *30*, *-0.5*, *15.75*, etc.
+* **Example**:
+
+    ```
+    POST /api/v1/users/external/1/features/MANAGE_TOD5533de505b/alloc
+    PARAMETERS: {"amount": "1", "paymentPlanId": "FREE_PLANca1b8f4ead"}
+    ```
+
+    ```http
+    RESPONSE CODE: 200
+    ```
 
 ### Ensure the existence of an External User
 
@@ -149,4 +171,14 @@ only provide an **external_user_id**, which identifies them in our system.
 * **Description**: Ensure that an External User exists. If it doesn't it will be created.
 * **Parameters**:
     * *email*: email of the External User.
+* **Example**:
+
+    ```
+    PUT /api/v1/users/external/1
+    PARAMETERS: {:email: "some@user.net"}
+    ```
+
+    ```http
+    RESPONSE CODE: 200
+    ```
 
