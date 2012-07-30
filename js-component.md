@@ -14,7 +14,7 @@ Now that you've included the component in your page you have to initialize it. I
 parameters, such as:
 
 * **baseUrl**: the URL of the Licensario API service. Ex: "http://users.licensario.net".
-* **initCompleted**: the function called to configure the JS Component after it finishes loading. It contains the *options* Hash that 
+* **initCompleted**: the function called to configure the JS Component after it finishes loading. It contains the **options** Hash that 
 in turn, holds the configuration parameters.
     * **featureIds**: an *Array* that contains the IDs of the Features you want to control the licensing for in this particular page.
     * **allowedPaymentPlanIds**: an *Array* of the Payment Plans your user will be allowed to choose from.
@@ -35,6 +35,18 @@ in turn, holds the configuration parameters.
       baseUrl: "http://users.licensario.net",
       initCompleted: function(){
         options = {
+          featureIds: ["TODO123", "SHOW_REPORT22"],
+          allowedPaymentPlanIds: [1,2,3],
+          licenseTag: "my-custom-unique-id",
+          externalUserId: "2",
+          callbackUrl: 'http://mysite.com/MY_CALLBACK_URL',
+          apiKey: "db886331e9105fc19dc9fd6df2caebab9f112c3c81877ea3a3bfcfe3076aa77d",
+          successCallback: function(){
+            alert('success!');
+          },
+          failCallback: function(){
+            alert('failure :(');
+          }
         }
       }
     });
