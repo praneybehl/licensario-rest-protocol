@@ -37,6 +37,27 @@ only provide an **external_user_id**, which identifies them in our system.
 * **Parameters**:
     * *featureIds*: IDs of the Features.
     * *paymentPlanIds*: IDs of the Payment Plans.
+* **Example**:
+
+    ```
+    GET /api/v1/users/external/1/licenses?featureIds=MANAGE_TOD5533de505b&paymentPlanIds=FREE_PLANca1b8f4ead
+    ```
+
+    ```xml
+    <?xml version="1.0"?>
+    <userLicenses>
+      <licenseCertificate licenseId="56" userId="121" paymentPlanId="FREE_PLANca1b8f4ead" issueDateUTC="20120719173522" is_trial="true">
+        <features>
+          <feature id="MANAGE_TOD5533de505b" totalAmount="100.0" amountUsed="2.0"/>
+        </features>
+      </licenseCertificate>
+      <licenseCertificate licenseId="16" userId="121" paymentPlanId="FREE_PLANca1b8f4ead" issueDateUTC="20120712232223" expirationDateUTC="20120812232223" is_trial="true">
+        <features>
+          <feature id="MANAGE_TOD5533de505b" totalAmount="100.0" amountUsed="23.0"/>
+        </features>
+      </licenseCertificate>
+    </userLicenses>
+    ```
 
 ### Create a License
 
@@ -45,6 +66,21 @@ only provide an **external_user_id**, which identifies them in our system.
 * **Description**: Create a license for a given user.
 * **Parameters**:
     * *paymentPlanId*: ID of the Payment Plan.
+* **Example**:
+
+    ```
+    POST /api/v1/users/external/1/licenses
+    PARAMETERS: {"paymentPlanId": "FREE_PLANca1b8f4ead"}
+    ```
+
+    ```xml
+    <?xml version="1.0"?>
+    <licenseCertificate licenseId="708" userId="121" paymentPlanId="FREE_PLANca1b8f4ead" issueDateUTC="20120730134848" expirationDateUTC="20120831000000" is_trial="true">
+      <features>
+        <feature id="MANAGE_TOD5533de505b" totalAmount="100.0" amountUsed="0.0"/>
+      </features>
+    </licenseCertificate>
+    ```
 
 ### Ensure that a License exists
 
@@ -53,6 +89,21 @@ only provide an **external_user_id**, which identifies them in our system.
 * **Description**: Ensure that a given user has the necessary license.
 * **Parameters**:
     * *paymentPlanId*: ID of the payment plan selected by the user
+* **Example**:
+
+    ```
+    PUT /api/v1/users/external/1/licenses
+    PARAMETERS: {"paymentPlanId": "FREE_PLANca1b8f4ead"}
+    ```
+
+    ```xml
+    <?xml version="1.0"?>
+    <licenseCertificate licenseId="16" userId="121" paymentPlanId="FREE_PLANca1b8f4ead" issueDateUTC="20120712232223" expirationDateUTC="20120812232223" is_trial="true">
+      <features>
+        <feature id="MANAGE_TOD5533de505b" totalAmount="100.0" amountUsed="24.0"/>
+      </features>
+    </licenseCertificate>
+    ```
 
 ### Read Feature's Allocation
 
@@ -61,6 +112,19 @@ only provide an **external_user_id**, which identifies them in our system.
 * **Description**: Retrieves the amount available (i.e. allocation) of a given feature to a given user.
 * **Parameters**:
     * *feature_id*: ID of the Feature.
+* **Example**:
+
+    ```
+    GET /api/v1/users/external/1/features/MANAGE_TOD5533de505b/alloc?paymentPlanId=FREE_PLANca1b8f4ead
+    ```
+
+    ```json
+    {
+      "total":"1200.0",
+      "used":"35.0",
+      "available":1165.0
+    }
+    ```
 
 ### Update a Feature's Allocation
 
@@ -70,6 +134,16 @@ only provide an **external_user_id**, which identifies them in our system.
 * **Parameters**:
     * *feature_id*: ID of the feature
     * *amount*: The new available amount of the Feature. Ex: *25*, *0.2*, *12.38*, etc.
+* **Example**:
+
+    ```
+    PUT /api/v1/users/external/1/features/MANAGE_TOD5533de505b/alloc
+    {"amount": "1", "paymentPlanId": "FREE_PLANca1b8f4ead"}
+    ```
+
+    ```http
+    HTTP/1.1 200 OK
+    ```
 
 ### Increment a Feature's Allocation
 
@@ -79,6 +153,16 @@ only provide an **external_user_id**, which identifies them in our system.
 * **Parameters**:
     * *feature_id*: ID of the Feature.
     * *amount*: The increment / decrement to the available amount of the Feature. Ex: *30*, *-0.5*, *15.75*, etc.
+* **Example**:
+
+    ```
+    POST /api/v1/users/external/1/features/MANAGE_TOD5533de505b/alloc
+    PARAMETERS: {"amount": "1", "paymentPlanId": "FREE_PLANca1b8f4ead"}
+    ```
+
+    ```http
+    HTTP/1.1 200 OK
+    ```
 
 ### Ensure the existence of an External User
 
@@ -87,4 +171,14 @@ only provide an **external_user_id**, which identifies them in our system.
 * **Description**: Ensure that an External User exists. If it doesn't it will be created.
 * **Parameters**:
     * *email*: email of the External User.
+* **Example**:
+
+    ```
+    PUT /api/v1/users/external/1
+    PARAMETERS: {:email: "some@user.net"}
+    ```
+
+    ```http
+    HTTP/1.1 200 OK
+    ```
 
