@@ -47,7 +47,8 @@ in turn, holds the configuration parameters.
           failCallback: function(){
             alert('failure :(');
           }
-        }
+        };
+        licensario.getLicense(options);
       }
     });
 ```
