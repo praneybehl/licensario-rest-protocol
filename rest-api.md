@@ -198,7 +198,7 @@ only provide an **external_user_id**, which identifies them in our system.
 
     PUT $BASE_URL
 
-* **Description**: Ensure that an External User exists. If it doesn't it will be created.
+* **Description**: Ensure that an External User exists. If it doesn''t it will be created.
 * **Parameters**:
     * *email*: email of the External User.
 * **Example**:
@@ -212,7 +212,34 @@ only provide an **external_user_id**, which identifies them in our system.
     HTTP/1.1 200 OK
     ```
 
-## Reporting
+## Transactions
+
+### Log a transaction
+* **Description**: Logs a transaction made for a license/refund
+* **Parameters**:
+    * *uuid* - transaction unique id (guid)
+    * *licenseId* - the license to associate the transaction with
+    * *amount* - transaction amount (including fees)
+    * *externalTransactionId* - transaction identifier (from your payment system)
+    * *userId* - user id in Licensario system (if you want Licensario to manage your users in the Pro subscription)
+    * *externalUserId* - user id in your system (NOTE: userId and externalUserId are mutualy exclusive)
+    * *type* - transaction type. Can be license|refund
+
+* **Response**:
+    * *id* - Licensario generated transaction id
+
+* **Example**:
+
+    ```http
+    PUT /api/v1/transactions
+    licenseId=12&amount=40.0&externalTransactionId=TR1233EF&externalUserId=9876&type=license
+    ```
+
+    ```json
+    {
+       "id": "123"
+    }
+    ```
 
 ### Revenue
 

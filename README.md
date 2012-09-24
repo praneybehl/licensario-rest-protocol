@@ -4,6 +4,7 @@ users entitlements, hassle-free. Whether you want to integrate your brand new aw
 your rock-solid battle-proven desktop software with our service, this is the place for you.
 
 # Products
+When signing up to Licensario, you should choose one of the 3 products:
 * [Insight](https://github.com/Licensario/licensario-rest-protocol/blob/master/insight.md) - send your users activities to 
 Licensario Servers (usually asynchronously). Use this if you already built your billing & entitlements management, 
 but want to get pricing & packaging insights from Licensario.
