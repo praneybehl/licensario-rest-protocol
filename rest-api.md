@@ -211,6 +211,6 @@ only provide an **external_user_id**, which identifies them in our system.
     
     ```json
     {
-        balance: 99.99
+        "balance": "99.99"
     }
     ```
