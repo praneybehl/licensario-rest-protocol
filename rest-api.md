@@ -14,6 +14,16 @@ library, such as Ruby, Java, C#, .NET, etc.
 All requests to our API need to by authenticated by adding the the **ISV_API_KEY** and **ISV_API_SECRET** headers 
 to each request. You can retrieve your API credentials in your [publisher's page](https://publishers.licensario.com).
 
+##Conventions
+All dates are specified in the following format: yyyymmddHHMMSS, where:
+
+* **yyyy** - the year, including century
+* **mm** - month (2 digit)
+* **dd** - day (2 digit)
+* **HH** - hour (2 digit)
+* **MM** - minutes (2 digit)
+* **SS** - seconds (2 digit)
+
 ## Your Users
 We offer two ways of identifying your users:
 
