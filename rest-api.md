@@ -81,6 +81,22 @@ only provide an **external_user_id**, which identifies them in our system.
       </features>
     </licenseCertificate>
     ```
+    
+### Cancel a license
+* **Description**: Revokes a license, optionaly specifying the revokation reason
+* **Parameters**:
+    * *revokeReason* (optional): Revokation reason
+* **Example**:
+
+    ```
+    DELETE /api/v1/licenses[?revokeReason=Some%20reason]
+    ```
+    
+    ```
+    HTTP 401 - Invalid request or unauthorized
+    HTTP 404 - License not found
+    HTTP 200 - License canceled
+    ```
 
 ### Ensure that a License exists
 
