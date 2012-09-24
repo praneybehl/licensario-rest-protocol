@@ -230,7 +230,7 @@ only provide an **external_user_id**, which identifies them in our system.
 
 * **Example**:
 
-    ```http
+    ```
     PUT /api/v1/transactions
     licenseId=12&amount=40.0&externalTransactionId=TR1233EF&externalUserId=9876&type=license
     ```
