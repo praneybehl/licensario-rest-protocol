@@ -197,4 +197,20 @@ only provide an **external_user_id**, which identifies them in our system.
     ```http
     HTTP/1.1 200 OK
     ```
+### Revenue
+* **Description**: Gets net revenue for a specific period (or for last month if not specified)
+* **Parameters**:
+    * *startDate*: start date
+    * *endDate*: end date
 
+* **Example**:
+
+    ```
+    GET /api/v1/publisher/balance[?startDate=20121110090807&endDate20111009080706]
+    ```
+    
+    ```json
+    {
+        balance: 99.99
+    }
+    ```
