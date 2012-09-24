@@ -37,7 +37,7 @@ only provide an **external_user_id**, which identifies them in our system.
 
         $BASE_URL = /api/v1/users/external/:external_user_id
 
-## Actions
+## Licensing
 
 ### Get a list of Licenses
 
@@ -131,7 +131,9 @@ only provide an **external_user_id**, which identifies them in our system.
     </licenseCertificate>
     ```
 
-### Read Feature's Allocation
+## Feature usage
+
+### Read Feature''s Allocation
 
     GET $BASE_URL/licenses/features/:feature_id/alloc
 
@@ -190,6 +192,8 @@ only provide an **external_user_id**, which identifies them in our system.
     HTTP/1.1 200 OK
     ```
 
+## Users management
+
 ### Ensure the existence of an External User
 
     PUT $BASE_URL
@@ -207,7 +211,11 @@ only provide an **external_user_id**, which identifies them in our system.
     ```http
     HTTP/1.1 200 OK
     ```
+
+## Reporting
+
 ### Revenue
+
 * **Description**: Gets net revenue for a specific period (or for last month if not specified)
 * **Parameters**:
     * *startDate*: start date
