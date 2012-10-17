@@ -14,6 +14,9 @@ library, such as Ruby, Java, C#, .NET, etc.
 All requests to our API need to by authenticated by adding the the **ISV_API_KEY** and **ISV_API_SECRET** headers 
 to each request. You can retrieve your API credentials in your [publisher's page](https://publishers.licensario.com).
 
+## Endpoint
+The host for all calls is https://users.licensario.com
+
 ##Conventions
 All dates are specified in the following format: yyyymmddHHMMSS, where:
 
