@@ -102,7 +102,7 @@ only provide an **external_user_id**, which identifies them in our system.
 * **Example**:
 
     ```
-    DELETE /api/v1/licenses[?revokeReason=Some%20reason]
+    DELETE /api/v1/licenses/:license_id[?revokeReason=Some%20reason]
     ```
     
     ```
