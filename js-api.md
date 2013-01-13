@@ -10,6 +10,25 @@ Simply include the following code into your page and you're good to go
 ```
 
 # Usage
+## Server side preparation
+To securely specify the user that will purchase the license, a server side call is required:
+
+```
+POST http://users.licensario.com/api/v1/wizards
+```
+
+This request accepts the following parameters:
+
+<table>
+    <tr>
+        <td>externalUserId</td>
+        <td>The user id as it was set in PUT /api/v1/users call</td>
+    </tr>
+</table>
+
+and will return a plain token for further use on client side.
+
+## Client side wizard launch
 Now that you've included the component in your page you have to initialize it. In order to do so, you will need to provide some important 
 parameters, such as:
 
@@ -27,6 +46,7 @@ in turn, holds the configuration parameters.
     * **apiKey**: your Licensario's API Key, which you can retrieve by going to your [publisher's page](https://publishers.licensario.com).
     * **successCallback**: the function that will be called if the User successfully completes the licensing process through the Wizard.
     * **failCallback**: this function will be called if the licensing process is cancelled by the User or otherwise fails.
+    * **wizardToken**: a token returned to you at server-side via POST /api/v1/wizards
 
 # Example
 
